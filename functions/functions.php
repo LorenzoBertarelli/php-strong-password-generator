@@ -1,4 +1,6 @@
 <?php
+ session_start();
+ $_SESSION['password'] = $password;
  $comb = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
  $pass = array(); 
  $combLen = strlen($comb) - 1;
