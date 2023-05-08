@@ -1,7 +1,13 @@
 <?php
     session_start();
-    $password = $_SESSION['password'];
     include __DIR__ . "/../functions/functions.php";
+
+    // if(isset($_GET['password'])) {
+    //     $password_length = $_GET["password"];
+    //     $password = array($password_length);
+    //     $_SESSION["password"] = $password;
+    //     header("Location: success.php");
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +22,8 @@
 
     <form action="index.php" method="GET">
         <label for="password">Inserisci il numero di caratteri con cui vuoi che venga composta la password</label> 
-        <input type="text" id="password" name="password">
+        <input type="text" id="password" name="password" value="<?php
+            echo $_GET["password"] ?? '' ?>">
         <button type="submit">Genera password</button>
     </form>
 
